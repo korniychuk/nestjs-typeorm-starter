@@ -2,6 +2,8 @@ module.exports = {
   root: true,
   parserOptions: {
     ecmaVersion: 2020,
+    // It looks like we need this line for WebStorm. Without it, we have to match eslint fall downs.
+    project: './tsconfig.lint.json',
   },
   env: {
     es6: true,
@@ -144,6 +146,24 @@ module.exports = {
       files: ['**/*spec.ts'],
       rules: {
         'max-classes-per-file': 'off',
+      },
+    },
+    {
+      files: ['src/migrations/**/*.ts', 'src/seeds/**/*.ts', 'src/configs/seed-template.ts'],
+      rules: {
+        '@typescript-eslint/class-name-casing': 'off',
+      },
+    },
+    {
+      files: ['src/configs/seed-template.ts'],
+      rules: {
+        '@typescript-eslint/no-unused-vars': 'off',
+      },
+    },
+    {
+      files: ['**/*.entity.ts', '**/*.dto.ts', '**/dtos/index.ts'],
+      rules: {
+        'import/no-cycle': 'off',
       },
     },
   ],

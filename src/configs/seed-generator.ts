@@ -37,7 +37,7 @@ function main(name: string): void {
       .replace(/__CLASS_NAME__/g, templateName)
   ;
 
-  const fileName = `${ timeStamp }-${ changeCase.param(name) }.ts`;
+  const fileName = `${ timeStamp }-${ changeCase.paramCase(name) }.ts`;
   const filePath = helpers.rootDir(C.TYPEORM_SEEDS_DIR, fileName);
   fs.writeFileSync(filePath, tplAsString);
 
