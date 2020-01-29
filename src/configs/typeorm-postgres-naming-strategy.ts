@@ -22,7 +22,7 @@ export class TypeORMPostgresNamingStrategy extends DefaultNamingStrategy {
   public tableName(targetName: string, userSpecifiedName: string | undefined): string {
     if (userSpecifiedName) return userSpecifiedName;
 
-    return changeCase.pascal(pluralize.plural(targetName));
+    return changeCase.pascalCase(pluralize.plural(targetName));
   }
 
   public primaryKeyName(tableOrName: Table|string, columnNames: string[]): string {
