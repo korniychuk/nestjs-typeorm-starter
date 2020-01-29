@@ -1,0 +1,28 @@
+version: '3.7'
+
+services:
+
+  postgres:
+    environment:
+      # Default root user name: postgres
+      POSTGRES_PASSWORD: example
+      APP_DB: the_bot_db
+      APP_USER: the_bot
+      APP_PASSWORD: 111
+    ports:
+      - 5432:5432
+    volumes:
+      - ./.db:/var/lib/postgresql/data
+
+  adminer:
+    image: adminer
+    restart: unless-stopped
+    networks:
+      - common
+    ports:
+      - 8080:8080
+
+networks:
+  common:
+    external: true
+

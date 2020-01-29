@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+
+  postgres:
+    image: docker.korniychuk.pro/the-bot_postgres
+    build: ./postgres
+    restart: unless-stopped
+    networks:
+      - common
+
+networks:
+  common:
+    external: true
+
