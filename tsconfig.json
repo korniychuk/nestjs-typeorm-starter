@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "incremental": true,
+    "lib": [
+      "es2019"
+    ],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noEmitHelpers": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "es2019",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "types": [
+      "jest",
+      "node"
+    ],
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "rootDir": ".",
+    "paths": {
+      "@app/*": [ "src/app/*" ],
+      "@configs/*": [ "src/configs/*" ],
+      "@src/*": [ "src/*" ]
+    }
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
