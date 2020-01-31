@@ -5,7 +5,7 @@ import * as C from './constants';
 import * as helpers from './helpers';
 
 export const getDefaultConnection = (): ConnectionOptions => ({
-  host: process.env.POSTGRES_HOST,
+  host: CFG.POSTGRES_HOST,
   port: +process.env.POSTGRES_PORT! || 5432,
   username: process.env.POSTGRES_USER,
   password: process.env.POSTGRES_PASS,

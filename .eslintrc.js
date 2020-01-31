@@ -112,7 +112,7 @@ module.exports = {
         '@typescript-eslint/restrict-plus-operands': 'error',
         'import/no-extraneous-dependencies': [
           'error',
-          { devDependencies: ['src/configs/seed-generator.ts', '**/*spec.ts', '**/global.d.ts'] },
+          { devDependencies: ['src/configs/seed-generator.ts', '**/*spec.ts', '**/jest-extended.d.ts'] },
         ],
         'no-useless-constructor': 'off',
         '@typescript-eslint/no-useless-constructor': 'error',

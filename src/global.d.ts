@@ -1,1 +1,1 @@
-import 'jest-extended';
+declare const CFG: import('@configs/app-config').EnvConfig;
