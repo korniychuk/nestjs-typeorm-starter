@@ -1,4 +1,3 @@
-import { typeOrmConfig } from '@src/configs/ormconfig';
+import { getTypeOrmConfig } from '@src/configs/ormconfig';
 
-module.exports = typeOrmConfig;
-// export default typeOrmConfig;
+module.exports = getTypeOrmConfig();
