@@ -6,7 +6,7 @@ declare -r colorYellow='\033[0;33m'
 declare -r colorBYellow='\033[1;33m'
 declare -r colorNc='\033[0m' # No Color
 
-declare -r tplRepoGit='git@github.com:korniychuk/nestjs-starter.git'
+declare -r tplRepoGit='git@github.com:korniychuk/nestjs-typeorm-starter.git'
 
 function execute() {
   local -r command="${1}"; shift
