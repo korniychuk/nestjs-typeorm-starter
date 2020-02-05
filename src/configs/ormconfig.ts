@@ -1,8 +1,11 @@
 import { ConnectionOptions } from 'typeorm';
+import * as dotenv from 'dotenv';
 
 import { typeORMNamingStrategy } from './typeorm-postgres-naming-strategy.instance';
 import * as C from './constants';
 import * as helpers from './helpers';
+
+dotenv.config();
 
 export const getDefaultConnection = (): ConnectionOptions => ({
   host: process.env.POSTGRES_HOST,
