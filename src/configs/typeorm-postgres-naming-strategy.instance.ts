@@ -1,3 +1,3 @@
-import { TypeORMPostgresNamingStrategy } from './typeorm-postgres-naming-strategy';
+import { TypeORMPostgresCamelCaseNamingStrategy } from '@z-brain/typeorm-postgres-camelcase-naming-strategy';
 
-export const typeORMNamingStrategy = new TypeORMPostgresNamingStrategy();
+export const typeORMNamingStrategy = new TypeORMPostgresCamelCaseNamingStrategy();

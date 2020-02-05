@@ -1,6 +1,6 @@
 import * as fs from 'fs';
-import * as changeCase from 'change-case';
 import * as yargs from 'yargs';
+import * as _ from 'lodash';
 
 import * as helpers from './helpers';
 import * as C from './constants';
@@ -31,13 +31,13 @@ function main(name: string): void {
   let tplAsString: string = fs.readFileSync(TEMPLATE_PATH).toString('UTF-8');
 
   const timeStamp = +new Date();
-  const templateName = `${ changeCase.camelCase(name) }${ timeStamp }`;
+  const templateName = `${ _.camelCase(name) }${ timeStamp }`;
   tplAsString = tplAsString
       .replace(/__TEMPLATE_NAME__/g, templateName)
       .replace(/__CLASS_NAME__/g, templateName)
   ;
 
-  const fileName = `${ timeStamp }-${ changeCase.paramCase(name) }.ts`;
+  const fileName = `${ timeStamp }-${ _.kebabCase(name) }.ts`;
   const filePath = helpers.rootDir(C.TYPEORM_SEEDS_DIR, fileName);
   fs.writeFileSync(filePath, tplAsString);
 
