@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
-import { defaultConnection } from '@configs/ormconfig';
+import { getDefaultConnection } from '@configs/ormconfig';
 
 import { entities as userEntities } from './+user/entities';
 import { UserModule } from './+user/user.module';
@@ -12,7 +12,7 @@ import { AppService } from './app.service';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
-      ...defaultConnection,
+      ...getDefaultConnection(),
       entities: [...userEntities],
     }),
     UserModule,
